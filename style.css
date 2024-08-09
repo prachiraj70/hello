@@ -31,67 +31,88 @@ h1 {
 .main {
   width: 800px;
   height: 300px;
-  border-radius: 10px;
+  background-color: #3498db; /* Initial background color */
+  border: 2px solid #2980b9; /* Initial border color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Initial shadow */
+  color: white; /* Text color */
   display: flex;
+  
   margin: auto;
   margin-top: 200px;
-  width: 50%;
-  border: 3px solid green;
-  padding: 20px;
   justify-content: center;
   align-items: center;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.5s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
- transition: 
-  background-color 0.5s ease, /* Smooth transition for background color */
-  border-color 0.5s ease,      /* Smooth transition for border color */
-  box-shadow 0.5s ease;        /* Smooth transition for shadow */
+  font-size: 18px;
+  font-weight: bold;
+  animation: pulseAnimation 5s infinite; /* Apply the animation */
 }
 
-/* Hover effect */
-.main:hover {
-background-color: coral; /* Change background color on hover */
-border-color: black;     /* Change border color on hover */
-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Increase shadow on hover */
+/* Keyframes for Animation */
+@keyframes pulseAnimation {
+  0% {
+    background-color: #3498db; /* Initial background color */
+    border-color: #2980b9; /* Initial border color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Initial shadow */
+  }
+  50% {
+    background-color: #e74c3c; /* Intermediate background color */
+    border-color: #c0392b; /* Intermediate border color */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Intermediate shadow */
+  }
+  100% {
+    background-color: #3498db; /* Final background color */
+    border-color: #2980b9; /* Final border color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Final shadow */
+  }
 }
-
-
 h1 {
   text-align: center;
-  color: black; /* Initial text color */
   font-size: 60px; /* Adjust the size as needed */
+  font-weight: bold; /* Bold text for better effect */
   position: relative;
-  text-shadow: 
-    1px 1px 0 #fff, /* White stroke effect */
-   -1px -1px 0 #fff,
-    1px -1px 0 #fff,
-   -1px 1px 0 #fff; 
-  transition: color 0.5s ease, text-shadow 0.5s ease; /* Smooth transition for color and shadow */
+  animation: textAnimation 5s infinite; /* Apply the animation */
 }
 
-/* Hover effect with multiple colors */
-h1:hover {
-  color: blue; /* Change text color on hover */
-  text-shadow: 
-    1px 1px 0 #000, /* Black stroke effect on hover */
-   -1px -1px 0 #000,
-    1px -1px 0 #000,
-   -1px 1px 0 #000;
+/* Keyframes for Heading Animation */
+@keyframes textAnimation {
+  0% {
+    color: black; /* Initial text color */
+    text-shadow: 
+      1px 1px 0 #fff, /* Initial stroke effect */
+     -1px -1px 0 #fff,
+      1px -1px 0 #fff,
+     -1px 1px 0 #fff;
+  }
+  25% {
+    color: #ff6347; /* Intermediate text color */
+    text-shadow: 
+      1px 1px 0 #000, /* Intermediate stroke effect */
+     -1px -1px 0 #000,
+      1px -1px 0 #000,
+     -1px 1px 0 #000;
+  }
+  50% {
+    color: #ffde59; /* Another intermediate color */
+    text-shadow: 
+      1px 1px 0 #ff6347, /* Another stroke effect */
+     -1px -1px 0 #ff6347,
+      1px -1px 0 #ff6347,
+     -1px 1px 0 #ff6347;
+  }
+  75% {
+    color: #50b3a2; /* Another intermediate color */
+    text-shadow: 
+      1px 1px 0 #ffde59, /* Another stroke effect */
+     -1px -1px 0 #ffde59,
+      1px -1px 0 #ffde59,
+     -1px 1px 0 #ffde59;
+  }
+  100% {
+    color: black; /* Final text color */
+    text-shadow: 
+      1px 1px 0 #fff, /* Final stroke effect */
+     -1px -1px 0 #fff,
+      1px -1px 0 #fff,
+     -1px 1px 0 #fff;
+  }
 }
-
-/* Additional hover color states */
-h1:hover::after {
-  content: ' '; /* Add content to create a pseudo-element for additional effects */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, #ff6347, #ffde59, #50b3a2); /* Gradient effect */
-  opacity: 0.5; /* Adjust the opacity for a subtle overlay effect */
-  z-index: -1; /* Place the gradient behind the text */
-  transition: opacity 0.5s ease; /* Smooth transition for gradient effect */
-}
-
