@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box; /* Added to ensure padding and border are included in element's total width and height */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: aqua;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0.4));
+  min-height: 100vh;
+  transition: background-color 4s; /* Added transition for smoother background color change */
+}
+
+body:hover {
+  animation: background 4s infinite; /* Made animation infinite for continuous effect */
+}
+
+h1 {
+  text-align: center;
+  color: #333; /* Added color for better text visibility */
+}
+
+@keyframes background {
+  0% { background-color: aqua; }
+  25% { background-color: #9A1663; }
+  50% { background-color: #E0144C; }
+  75% { background-color: #FF5858; }
+  100% { background-color: #FF97C1; }
+}
+
+.main {
+  width: 800px;
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  margin: auto;
+  margin-top: 200px;
+  width: 50%;
+  border: 3px solid green;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+}
+
+h1 {
+  text-align: center;
+  color: black; /* Initial text color */
+  font-size: 60px; /* Adjust the size as needed */
+  position: relative;
+  text-shadow: 
+    1px 1px 0 #fff, /* White stroke effect */
+   -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+   -1px 1px 0 #fff; 
+  transition: color 0.5s ease, text-shadow 0.5s ease; /* Smooth transition for color and shadow */
+}
+
+/* Hover effect with multiple colors */
+h1:hover {
+  color: blue; /* Change text color on hover */
+  text-shadow: 
+    1px 1px 0 #000, /* Black stroke effect on hover */
+   -1px -1px 0 #000,
+    1px -1px 0 #000,
+   -1px 1px 0 #000;
+}
+
+/* Additional hover color states */
+h1:hover::after {
+  content: ' '; /* Add content to create a pseudo-element for additional effects */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ff6347, #ffde59, #50b3a2); /* Gradient effect */
+  opacity: 0.5; /* Adjust the opacity for a subtle overlay effect */
+  z-index: -1; /* Place the gradient behind the text */
+  transition: opacity 0.5s ease; /* Smooth transition for gradient effect */
+}
+
